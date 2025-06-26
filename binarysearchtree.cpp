@@ -67,81 +67,131 @@ public:
             return;
         }
 
-        //7. if the value in the data field of the new node is greater than that of the parent
-        else if (x > parent -> info)
+        // 7. if the value in the data field of the new node is greater than that of the parent
+        else if (x > parent->info)
         {
-            //7a. make the right child of parent point to the new node
-            parent -> rightchild = newNode;
-            
-            //7b. exit
+            // 7a. make the right child of parent point to the new node
+            parent->rightchild = newNode;
+
+            // 7b. exit
             return;
         }
     }
 
-    void search (int element, Node *&parent, Node *&currentNode)
+    void search(int element, Node *&parent, Node *&currentNode)
     {
-      //this function searches the currentNode of the specified node as well as the current node of its parent
-      currentNode = ROOT;
-      parent = nullptr;
-      while ((currentNode !=nullptr) && (currentNode -> info != element))
-      {
-        parent = currentNode;
-        if  (element < currentNode -> info)
-        currentNode = currentNode ->leftchild;
-        else
-        currentNode = currentNode ->rightchild;
-      }
-    
+        // this function searches the currentNode of the specified node as well as the current node of its parent
+        currentNode = ROOT;
+        parent = nullptr;
+        while ((currentNode != nullptr) && (currentNode->info != element))
+        {
+            parent = currentNode;
+            if (element < currentNode->info)
+                currentNode = currentNode->leftchild;
+            else
+                currentNode = currentNode->rightchild;
+        }
     }
 
     bool isEmpty()
     {
-        //check if the tree is empty
-        return ROOT ==nullptr;
+        // check if the tree is empty
+        return ROOT == nullptr;
     }
-    void inorder (Node *ptr)
+    void inorder(Node *ptr)
     {
         if (isEmpty())
         {
-            cout << "tree is empty" <<endl;
+            cout << "tree is empty" << endl;
             return;
         }
         if (ptr == nullptr)
-        return;
+            return;
 
-        inorder (ptr ->leftchild);
-        cout << ptr ->info << "";//parent
-        inorder (ptr ->rightchild);
+        inorder(ptr->leftchild);
+        cout << ptr->info << ""; // parent
+        inorder(ptr->rightchild);
     }
 
-    void preorder (Node *ptr)
+    void preorder(Node *ptr)
     {
         if (isEmpty())
         {
-            cout << "tree is empty" <<endl;
+            cout << "tree is empty" << endl;
             return;
         }
         if (ptr == nullptr)
-        return;
+            return;
 
-        cout << ptr ->info << "";//parent
-        preorder (ptr ->leftchild);
-        preorder (ptr ->rightchild);
+        cout << ptr->info << ""; // parent
+        preorder(ptr->leftchild);
+        preorder(ptr->rightchild);
     }
 
-     void postorder (Node *ptr)
+    void postorder(Node *ptr)
     {
         if (isEmpty())
         {
-            cout << "tree is empty" <<endl;
+            cout << "tree is empty" << endl;
             return;
         }
         if (ptr == nullptr)
-        return;
-        
-        postorder (ptr ->leftchild);
-        postorder (ptr ->rightchild);
-        cout << ptr ->info << "";//parent
-    }
+            return;
 
+        postorder(ptr->leftchild);
+        postorder(ptr->rightchild);
+        cout << ptr->info << ""; // parent
+    }
 };
+
+int main()
+{
+    BinaryTree x;
+    while (true)
+    {
+        cout << "\nMenu" << endl;
+        cout << "1. Implement insert operation" << endl;
+        cout << "2. Perform inorder traversal" << endl;
+        cout << "3. Perform preorder traversal" << endl;
+        cout << "4. Perform postorder traversal" << endl;
+        cout << "5. Exit" << endl;
+        cout << "\nEnter your choice (1-5) : ";
+
+        char ch;
+        cin >> ch;
+        cout << endl;
+
+        switch (ch)
+        {
+        case '1':
+        {
+            x.insert();
+            break;
+        }
+        case '2':
+        {
+            x.inorder(x.ROOT);
+            break;
+        }
+        case '3':
+        {
+
+            x.preorder(x.ROOT);
+            break;
+        }
+        case '4':
+        {
+
+            x.postorder(x.ROOT);
+            break;
+        }
+        case '5':
+            return 0;
+        default:
+        {
+            cout << "Invalid option" << endl;
+            break;
+        }
+        }
+    }
+}
