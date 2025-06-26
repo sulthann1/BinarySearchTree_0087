@@ -8,5 +8,8 @@ class Node
     Node *rightchild;
 
     //Constructor for the node class
-
+        Node()
+    {
+        leftchild
+    }
 }
