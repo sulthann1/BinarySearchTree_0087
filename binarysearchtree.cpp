@@ -99,5 +99,14 @@ public:
         //check if the tree is empty
         return ROOT ==nullptr;
     }
-    
+    void inorder (Node *ptr)
+    {
+        if (isEmpty())
+        {
+            cout << "tree is empty" <<endl;
+            return;
+        }
+        if (ptr == nullptr)
+        return;
+    }
 };
