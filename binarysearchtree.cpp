@@ -28,6 +28,12 @@ public:
     void insert()
     {
         int x;
-        cout
+        cout << "Masukan nilai :";
+        cin >> x;
+
+        //1. allocate memory foor the new node
+        Node *newNode = new Node();
+
+        
     }
 };
