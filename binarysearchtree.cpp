@@ -14,3 +14,9 @@ class Node
         rightchild = nullptr; //initialize rigth child to null
     }
 };
+
+class BinaryTree
+{
+    public : 
+    Node *ROOT
+}
