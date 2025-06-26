@@ -34,6 +34,11 @@ public:
         //1. allocate memory foor the new node
         Node *newNode = new Node();
 
-        
+        //2. Assign value to the data field of new node
+        newNode -> info = x;
+
+        //3. Make the left
+
+     
     }
 };
