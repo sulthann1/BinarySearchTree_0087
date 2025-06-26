@@ -3,20 +3,20 @@ using namespace std;
 
 class Node
 {
-    public :
+public:
     Node *leftchild;
     Node *rightchild;
 
-    //Constructor for the node class
-        Node()
+    // Constructor for the node class
+    Node()
     {
-        leftchild = nullptr; //initialize left child to null
-        rightchild = nullptr; //initialize rigth child to null
+        leftchild = nullptr;  // initialize left child to null
+        rightchild = nullptr; // initialize rigth child to null
     }
 };
 
 class BinaryTree
 {
-    public : 
-    Node *ROOT
-}
+public:
+    Node *ROOT;
+};
